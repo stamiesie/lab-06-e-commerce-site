@@ -1,1 +1,22 @@
-/* add home page styles here */
+h3 {
+    text-align: center;
+}
+
+img {
+    height: 200px;
+}
+
+p {
+    text-align: center;
+}
+
+.book {
+    border: 2px solid black;
+    padding: 15px;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.buy-button {
+
+}

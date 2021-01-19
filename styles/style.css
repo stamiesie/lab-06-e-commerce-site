@@ -84,9 +84,9 @@ content {
     width: 80%;
 }
 
-p {
+/* p {
     margin: var(--gutter);
-}
+} */
   
 footer {
     position: fixed;
