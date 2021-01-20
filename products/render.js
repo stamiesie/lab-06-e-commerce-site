@@ -34,9 +34,5 @@ export function renderBook(books) {
     buyButton.textContent = 'BUY';
     li.append(buyButton);
 
-
-
     return li;
-
-
 }

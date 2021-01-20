@@ -1,8 +1,3 @@
-// import functions and grab DOM elements
-
-// initialize state
-
-// set event listeners to update state and DOM
 
 export const books = [
     {
@@ -15,34 +10,34 @@ export const books = [
     },
     {
         id: 'book2',
-        title: 'We Begin At The End',
-        image: '/assets/book1.png',
-        author: 'Chris Whitaker',
-        category: 'Fiction',
-        price: 19.95,
+        title: 'Building for Better Living',
+        image: '/assets/book2.png',
+        author: 'A. Quincy Jones',
+        category: 'Non-Fiction',
+        price: 29.95,
     },
     {
         id: 'book3',
-        title: 'We Begin At The End',
-        image: '/assets/book1.png',
-        author: 'Chris Whitaker',
+        title: 'Fire On The Mountain',
+        image: '/assets/book3.png',
+        author: 'Edward Abbey',
         category: 'Fiction',
-        price: 19.95,
+        price: 14.95,
     },
     {
         id: 'book4',
-        title: 'We Begin At The End',
-        image: '/assets/book1.png',
-        author: 'Chris Whitaker',
+        title: 'The Signal',
+        image: '/assets/book4.png',
+        author: 'Ron Carlson',
         category: 'Fiction',
-        price: 19.95,
+        price: 14.95,
     },
     {
         id: 'book5',
-        title: 'We Begin At The End',
-        image: '/assets/book1.png',
-        author: 'Chris Whitaker',
-        category: 'Fiction',
+        title: 'Neutra',
+        image: '/assets/book5.png',
+        author: 'Barbara Lamprecht',
+        category: 'Non-Fiction',
         price: 19.95,
     },
 

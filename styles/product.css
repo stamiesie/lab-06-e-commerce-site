@@ -1,9 +1,31 @@
-h3 {
-    text-align: center;
+body {
+    background-color: #0FA3B1;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
-img {
+.bookstore {
+    font-size: 2.0em;
+    color: #ffffff;
+    margin: 20px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.book-image {
     height: 200px;
+    border: 2px solid rgb(87, 87, 87);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.35);
+    
 }
 
 p {
@@ -11,8 +33,30 @@ p {
 }
 
 .books {
-    border: 2px solid black;
+    border: 2px solid white;
     padding: 15px;
     border-radius: 20px;
     margin: 20px;
+    background-color: #CACFD6;
+    box-shadow: 0px 5px 5px 5px rgba(0,0,0,0.55);
+    
+}
+
+#book-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.buy-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    background-color: #F7A072;
+    width: 100px;
+    height: 30px;
+    border-radius: 30px;
+    box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.35);
 }
