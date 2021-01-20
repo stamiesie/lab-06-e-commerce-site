@@ -10,7 +10,7 @@ export function renderBook(books) {
 
     const img = document.createElement('img');
     img.classList.add('book-image');
-    img.src = books.image;
+    img.src = `/assets/${books.image}`;
     li.append(img);
 
     const pAuthor = document.createElement('p');
