@@ -1,7 +1,9 @@
 export function findById(id, array) {
-    for (let item in array) {
-        if (item === item.id) {
-            return item;
+    for (let book of array) {
+        if (book.id === id) {
+            return book;
         }
     }
 }
+
+
