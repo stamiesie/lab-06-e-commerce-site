@@ -4,7 +4,7 @@ import { findById, calcLineItem, renderLineItems, calcOrderTotal } from './utils
 
 
 const table = document.getElementById('table');
-
+// const cart = getCart();
 let total = 0;
 
 for (let item of purchaseData) {

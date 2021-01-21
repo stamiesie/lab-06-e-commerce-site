@@ -33,6 +33,12 @@ export function renderBook(books) {
     buyButton.value = books.id;
     buyButton.textContent = 'BUY';
     li.append(buyButton);
+    // import addTo Cart from cart Utils
+    buyButton.addEventListener('click', () => {
+        addToCart(animal.id);
+
+    });
 
     return li;
 }
+
