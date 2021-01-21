@@ -1,17 +1,3 @@
-export function findById(id, array) {
-    for (let book of array) {
-        if (book.id === id) {
-            return book;
-        }
-    }
-}
-
-export function calcLineItem(quantity, price) {
-    let lineTotal = quantity * price;
-
-    return Math.round(lineTotal * 100) / 100;
-}
-
 export function renderLineItems(cartItem, books) {
     const quantity = cartItem.quantity;
 
@@ -30,15 +16,5 @@ export function renderLineItems(cartItem, books) {
     tr.append(titleTd, quantityTd, priceTd, lineTotalTd);
 
     return tr;
-}
-
-export function calcOrderTotal(cartArray, booksArray) {
-    let total = 0;
-    for (let item of cartArray) {
-        const bookObj = findById(item.id, booksArray);
-        const lineTotal = calcLineItem(item.quantity, bookObj.price);
-        total = total + lineTotal;
-    }
-    return total;
 
 }
