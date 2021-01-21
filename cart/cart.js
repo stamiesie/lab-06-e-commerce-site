@@ -11,7 +11,7 @@ for (let item of purchaseData) {
     const book = findById(item.id, books);
 
     const bookTotal = calcLineItem(item, book);
-    total += bookTotal;
+    total = total + bookTotal;
 
     const tableRow = renderLineItems(item, book);
 

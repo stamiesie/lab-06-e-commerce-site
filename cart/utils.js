@@ -40,5 +40,4 @@ export function calcOrderTotal(cartArray, booksArray) {
         total = total + lineTotal;
     }
     return Math.round(total * 100) / 100;
-
 }
