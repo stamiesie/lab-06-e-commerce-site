@@ -1,6 +1,7 @@
 
 import { renderBook } from '../products/render.js';
 import { findById } from '../cart/utils.js';
+import { calcLineItem } from '../cart/utils.js';
 
 const test = QUnit.test;
 
@@ -84,3 +85,29 @@ test('should take in book1 and return book title We Begin At The End', (expect) 
     expect.deepEqual(actual, expected);
 });
 
+
+
+
+test('will return 9.67 when given 3.11 and 3.11', (expect) => {
+
+    const expected = 9.67;
+
+    const actual = calcLineItem(3.11, 3.11);
+
+    expect.equal(actual, expected);
+});
+
+
+test('should take in purchaseData for book1 and return an td', (expect) => {
+
+    const book1 = {
+        id: 'book1',
+        quantity: 3,
+    },
+
+    const expected = `<li class="books"><h3 class="title">We Begin At The End</h3><img class="book-image" src="../assets//assets/book1.png"><p class="author">Chris Whitaker</p><p class="category">Fiction</p><p class="price">$19.95</p><button class="buy-button" value="book1">BUY</button></li>`;
+
+    const actual = renderBook(firstBook);
+
+    expect.equal(actual.outerHTML, expected);
+});
