@@ -1,4 +1,4 @@
-export purchaseData = [
+export const purchaseData = [
     {
         id: 'book1',
         quantity: 3,
@@ -16,7 +16,7 @@ export purchaseData = [
         quantity: 5,
     },
     {
-        id: 'book4',
+        id: 'book5',
         quantity: 4,
     },
-]
+];
