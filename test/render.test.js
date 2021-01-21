@@ -116,7 +116,7 @@ test('should take in purchaseData for book1 and return an td', (expect) => {
         price: 19.95,
     };
 
-    const expected = "<tr><td>We Begin At The End</td><td>3</td><td>19.95</td><td>$59.85</td></tr>";
+    const expected = `<tr><td>We Begin At The End</td><td>3</td><td>19.95</td><td>$59.85</td></tr>`;
 
     const actual = renderLineItems(cartBook, book);
 
