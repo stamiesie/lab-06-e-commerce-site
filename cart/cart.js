@@ -24,11 +24,18 @@ const td2 = document.createElement('td');
 const td3 = document.createElement('td');
 const td4 = document.createElement('td');
 
-td4.textContent = `Order Total: $${calcOrderTotal(purchaseData, books)}`;
+let orderTotal = calcOrderTotal(purchaseData, books)
+
+td4.textContent = `Order Total: $${orderTotal}`;
 
 tr.append(td1, td2, td3, td4);
 
 table.append(tr);
 
 const orderButton = document.getElementById('order-total');
+const totalMessage = document.getElementById('total-message');
 
+orderButton.addEventListener('click', () => {
+    totalMessage.textContent = `$${orderTotal} will be charged to your card on file.  Your items will ship in 3-4 months.`;
+
+});
