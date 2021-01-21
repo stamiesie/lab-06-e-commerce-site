@@ -3,6 +3,7 @@ import { renderBook } from '../products/render.js';
 import { findById } from '../cart/utils.js';
 import { calcLineItem } from '../cart/utils.js';
 import { renderLineItems } from '../cart/utils.js';
+import { calcOrderTotal } from '../cart/utils.js';
 
 const test = QUnit.test;
 
@@ -120,4 +121,43 @@ test('should take in purchaseData for book1 and return an td', (expect) => {
     const actual = renderLineItems(cartBook, book);
 
     expect.equal(actual.outerHTML, expected);
+});
+
+test('adds together line item totals into order total', (expect) => {
+
+    const cartBook = [
+        {
+            id: 'book1',
+            quantity: 3,
+        },
+        {
+            id: 'book4',
+            quantity: 5,
+        }
+    ];
+
+    const book = [
+        {
+            id: 'book1',
+            title: 'We Begin At The End',
+            image: 'book1.png',
+            author: 'Chris Whitaker',
+            category: 'Fiction',
+            price: 19.95,
+        },
+        {
+            id: 'book4',
+            title: 'The Signal',
+            image: 'book4.png',
+            author: 'Ron Carlson',
+            category: 'Fiction',
+            price: 14.95,
+        }
+    ];
+
+    const expected = 134.60;
+
+    const actual = calcOrderTotal(cartBook, book);
+
+    expect.equal(actual, expected);
 });

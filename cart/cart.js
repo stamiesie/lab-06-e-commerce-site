@@ -1,6 +1,6 @@
 import { purchaseData } from './data.js';
 import { books } from '../products/books.js';
-import { findById, calcLineItem, renderLineItems } from './utils.js';
+import { findById, calcLineItem, renderLineItems, calcOrderTotal } from './utils.js';
 
 
 const table = document.getElementById('table');
@@ -18,5 +18,17 @@ for (let item of purchaseData) {
     table.append(tableRow);
 }
 
+const tr = document.createElement('tr');
+const td1 = document.createElement('td');
+const td2 = document.createElement('td');
+const td3 = document.createElement('td');
+const td4 = document.createElement('td');
 
+td4.textContent = `Order Total: $${calcOrderTotal(purchaseData, books)}`;
+
+tr.append(td1, td2, td3, td4);
+
+table.append(tr);
+
+const orderButton = document.getElementById('order-total');
 
