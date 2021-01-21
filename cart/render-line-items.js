@@ -1,4 +1,4 @@
-export function renderLineItems(cartItem, book) {
+export function renderLineItems(cartItem, books) {
     const quantity = cartItem.quantity;
 
     const tr = document.createElement('tr');
@@ -7,6 +7,14 @@ export function renderLineItems(cartItem, book) {
     const quantityTd = document.createElement('td');
     const priceTd = document.createElement('td');
     const lineTotalTd = document.createElement('td');
+
+    titleTd.textContent = books.title;
+    quantityTd.textContent = quantity;
+    priceTd.textContent = books.price;
+    lineTotalTd.textContent = `$${calcLineItem(cartItem, books)}`;
+
+    tr.append(titleTd, quantityTd, priceTd, lineTotalTd);
+
 
 
 }

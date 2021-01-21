@@ -2,6 +2,7 @@
 import { renderBook } from '../products/render.js';
 import { findById } from '../cart/utils.js';
 import { calcLineItem } from '../cart/utils.js';
+import { renderLineItems } from '../cart/utils.js';
 
 const test = QUnit.test;
 
@@ -100,14 +101,23 @@ test('will return 9.67 when given 3.11 and 3.11', (expect) => {
 
 test('should take in purchaseData for book1 and return an td', (expect) => {
 
-    const book1 = {
+    const cartBook = {
         id: 'book1',
         quantity: 3,
-    },
+    };
 
-    const expected = `<li class="books"><h3 class="title">We Begin At The End</h3><img class="book-image" src="../assets//assets/book1.png"><p class="author">Chris Whitaker</p><p class="category">Fiction</p><p class="price">$19.95</p><button class="buy-button" value="book1">BUY</button></li>`;
+    const book = {
+        id: 'book1',
+        title: 'We Begin At The End',
+        image: 'book1.png',
+        author: 'Chris Whitaker',
+        category: 'Fiction',
+        price: 19.95,
+    };
 
-    const actual = renderBook(firstBook);
+    const expected = "<tr><td>We Begin At The End</td><td>3</td><td>19.95</td><td>$59.85</td></tr>";
+
+    const actual = renderLineItems(cartBook, book);
 
     expect.equal(actual.outerHTML, expected);
 });
