@@ -24,7 +24,7 @@ const td2 = document.createElement('td');
 const td3 = document.createElement('td');
 const td4 = document.createElement('td');
 
-let orderTotal = calcOrderTotal(purchaseData, books)
+let orderTotal = calcOrderTotal(purchaseData, books);
 
 td4.textContent = `Order Total: $${orderTotal}`;
 
