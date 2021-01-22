@@ -42,7 +42,8 @@ if (purchaseData.length === 0) {
     orderButton.addEventListener('click', () => {
         // totalMessage.textContent = `$${orderTotal} will be charged to your card on file.  Your items will ship in 3-4 months.`;
         const cart = getCart();
-        alert(JSON.stringify(cart, true, 2));
+        const orderCart = JSON.stringify(cart, true, 2);
+        alert(`Order total: $${orderTotal}.  Thank you! Your order is below: ` + orderCart);
         clearCart();
         window.location.href = '../index.html';
     });
