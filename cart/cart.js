@@ -1,6 +1,6 @@
 import { books } from '../products/books.js';
 import { findById, calcLineItem, renderLineItems, calcOrderTotal } from './utils.js';
-import { getCart } from './cart-api.js';
+import { clearCart, getCart } from './cart-api.js';
 
 const table = document.getElementById('table');
 
@@ -34,9 +34,16 @@ tr.append(td1, td2, td3, td4);
 table.append(tr);
 
 const orderButton = document.getElementById('order-total');
-const totalMessage = document.getElementById('total-message');
+// const totalMessage = document.getElementById('total-message');
 
-orderButton.addEventListener('click', () => {
-    totalMessage.textContent = `$${orderTotal} will be charged to your card on file.  Your items will ship in 3-4 months.`;
-
-});
+if (purchaseData.length === 0) {
+    orderButton.disabled = true;
+} else {
+    orderButton.addEventListener('click', () => {
+        // totalMessage.textContent = `$${orderTotal} will be charged to your card on file.  Your items will ship in 3-4 months.`;
+        const cart = getCart();
+        alert(JSON.stringify(cart, true, 2));
+        clearCart();
+        window.location.href = '../index.html';
+    });
+}

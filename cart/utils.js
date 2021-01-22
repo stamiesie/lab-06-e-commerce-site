@@ -40,5 +40,5 @@ export function calcOrderTotal(cartArray, booksArray) {
         const lineTotal = calcLineItem(item.quantity, bookObj.price);
         total = total + lineTotal;
     }
-    return Math.round(total * 100) / 100;
+    return total.toFixed(2);
 }

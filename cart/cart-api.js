@@ -45,4 +45,3 @@ export function addToCart(id) {
     }
     setCart(cart);
 }
-

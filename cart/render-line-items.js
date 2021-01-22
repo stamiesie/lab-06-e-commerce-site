@@ -16,5 +16,4 @@ export function renderLineItems(cartItem, books) {
     tr.append(titleTd, quantityTd, priceTd, lineTotalTd);
 
     return tr;
-
 }
