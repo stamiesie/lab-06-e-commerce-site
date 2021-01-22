@@ -5,6 +5,7 @@ import { calcLineItem } from '../cart/utils.js';
 import { renderLineItems } from '../cart/utils.js';
 import { calcOrderTotal } from '../cart/utils.js';
 
+
 const test = QUnit.test;
 
 test('should take in a book and return an li', (expect) => {
@@ -161,3 +162,10 @@ test('adds together line item totals into order total', (expect) => {
 
     expect.equal(actual, expected);
 });
+
+
+
+
+
+
+
