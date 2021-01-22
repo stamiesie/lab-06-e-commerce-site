@@ -1,3 +1,5 @@
+import { addToCart } from '../cart/cart-api.js';
+
 export function renderBook(books) {
 
     const li = document.createElement('li');
@@ -29,15 +31,15 @@ export function renderBook(books) {
     li.append(pPrice);
 
     const buyButton = document.createElement('button');
+    buyButton.addEventListener('click', () => {
+        addToCart(books.id);
+    });
+
     buyButton.classList.add('buy-button');
     buyButton.value = books.id;
     buyButton.textContent = 'BUY';
     li.append(buyButton);
-    // import addTo Cart from cart Utils
-    buyButton.addEventListener('click', () => {
-        addToCart(animal.id);
 
-    });
 
     return li;
 }

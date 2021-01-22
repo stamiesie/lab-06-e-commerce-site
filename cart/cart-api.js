@@ -44,6 +44,5 @@ export function addToCart(id) {
         cart.push(newCartBook);
     }
     setCart(cart);
-
 }
 

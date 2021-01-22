@@ -1,10 +1,11 @@
-import { purchaseData } from './data.js';
 import { books } from '../products/books.js';
 import { findById, calcLineItem, renderLineItems, calcOrderTotal } from './utils.js';
-
+import { getCart } from './cart-api.js';
 
 const table = document.getElementById('table');
-// const cart = getCart();
+
+const purchaseData = getCart();
+
 let total = 0;
 
 for (let item of purchaseData) {
