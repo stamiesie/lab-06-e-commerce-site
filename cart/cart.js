@@ -34,13 +34,11 @@ tr.append(td1, td2, td3, td4);
 table.append(tr);
 
 const orderButton = document.getElementById('order-total');
-// const totalMessage = document.getElementById('total-message');
 
 if (purchaseData.length === 0) {
     orderButton.disabled = true;
 } else {
     orderButton.addEventListener('click', () => {
-        // totalMessage.textContent = `$${orderTotal} will be charged to your card on file.  Your items will ship in 3-4 months.`;
         const cart = getCart();
         const orderCart = JSON.stringify(cart, true, 2);
         alert(`Order total: $${orderTotal}.  Thank you! Your order is below: ` + orderCart);

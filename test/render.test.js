@@ -5,8 +5,8 @@ import { calcLineItem } from '../cart/utils.js';
 import { renderLineItems } from '../cart/utils.js';
 import { calcOrderTotal } from '../cart/utils.js';
 
-
 const test = QUnit.test;
+
 
 test('should take in a book and return an li', (expect) => {
 
@@ -25,7 +25,6 @@ test('should take in a book and return an li', (expect) => {
 
     expect.equal(actual.outerHTML, expected);
 });
-
 
 
 test('should take in book1 and return book title We Begin At The End', (expect) => {
@@ -89,8 +88,6 @@ test('should take in book1 and return book title We Begin At The End', (expect) 
 });
 
 
-
-
 test('will return 9.67 when given 3.11 and 3.11', (expect) => {
 
     const expected = 9.67;
@@ -123,6 +120,7 @@ test('should take in purchaseData for book1 and return an td', (expect) => {
 
     expect.equal(actual.outerHTML, expected);
 });
+
 
 test('adds together line item totals into order total', (expect) => {
 
@@ -162,10 +160,3 @@ test('adds together line item totals into order total', (expect) => {
 
     expect.equal(actual, expected);
 });
-
-
-
-
-
-
-

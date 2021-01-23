@@ -10,7 +10,6 @@ export function calcLineItem(quantity, price) {
     let lineTotal = quantity * price;
 
     return (Math.round(lineTotal * 100) / 100);
-
 }
 
 export function renderLineItems(cartItem, books) {

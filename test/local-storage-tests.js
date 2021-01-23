@@ -4,6 +4,7 @@ import { getCart, clearCart, setCart } from '../cart/cart-api.js';
 const test = QUnit.test;
 
 
+
 // getCart //
 test('getCart should get the correct cart from local storage', (expect) => {
     // test cart 
@@ -30,6 +31,8 @@ test('getCart should get the correct cart from local storage', (expect) => {
     // check to see if the cart in local storage matches cartBook
     expect.deepEqual(cart, cartBook);
 });
+
+
 
 // clearCart //
 test('clearCart should clear cart from local storage', (expect) => {
@@ -62,6 +65,8 @@ test('clearCart should clear cart from local storage', (expect) => {
     // compare cart (now empty) to pull the cart out of local storage and compare to emptyCart for equality
     expect.deepEqual(cart, emptyCart);
 });
+
+
 
 // setCart //
 test('setCart should stringify and set cart to local storage', (expect) => {

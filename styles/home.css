@@ -51,10 +51,6 @@ body {
     margin-top: 20px;
 }
 
-/* p {
-    width: 150px;
-} */
-
 a {
     color: white;
 }
@@ -63,6 +59,3 @@ a:hover {
     color: black;
     font-size: 1.1em;
 }
-
-
-

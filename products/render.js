@@ -50,7 +50,5 @@ export function renderBook(books) {
     });
     li.append(buyButton);
 
-
     return li;
 }
-
