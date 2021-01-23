@@ -40,5 +40,4 @@ export const books = [
         category: 'Non-Fiction',
         price: 19.95,
     },
-
 ];

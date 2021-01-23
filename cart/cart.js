@@ -1,9 +1,10 @@
-import { purchaseData } from './data.js';
 import { books } from '../products/books.js';
 import { findById, calcLineItem, renderLineItems, calcOrderTotal } from './utils.js';
-
+import { clearCart, getCart } from './cart-api.js';
 
 const table = document.getElementById('table');
+
+const purchaseData = getCart();
 
 let total = 0;
 
@@ -11,7 +12,7 @@ for (let item of purchaseData) {
     const book = findById(item.id, books);
 
     const bookTotal = calcLineItem(item, book);
-    total += bookTotal;
+    total = total + bookTotal;
 
     const tableRow = renderLineItems(item, book);
 
@@ -33,9 +34,15 @@ tr.append(td1, td2, td3, td4);
 table.append(tr);
 
 const orderButton = document.getElementById('order-total');
-const totalMessage = document.getElementById('total-message');
 
-orderButton.addEventListener('click', () => {
-    totalMessage.textContent = `$${orderTotal} will be charged to your card on file.  Your items will ship in 3-4 months.`;
-
-});
+if (purchaseData.length === 0) {
+    orderButton.disabled = true;
+} else {
+    orderButton.addEventListener('click', () => {
+        const cart = getCart();
+        const orderCart = JSON.stringify(cart, true, 2);
+        alert(`Order total: $${orderTotal}.  Thank you! Your order is below: ` + orderCart);
+        clearCart();
+        window.location.href = '../index.html';
+    });
+}

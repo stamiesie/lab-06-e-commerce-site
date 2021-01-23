@@ -11,10 +11,10 @@ export function renderLineItems(cartItem, books) {
     titleTd.textContent = books.title;
     quantityTd.textContent = quantity;
     priceTd.textContent = books.price;
+    // eslint-disable-next-line no-undef
     lineTotalTd.textContent = `$${calcLineItem(cartItem.quantity, books.price)}`;
 
     tr.append(titleTd, quantityTd, priceTd, lineTotalTd);
 
     return tr;
-
 }

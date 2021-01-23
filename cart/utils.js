@@ -9,7 +9,7 @@ export function findById(id, array) {
 export function calcLineItem(quantity, price) {
     let lineTotal = quantity * price;
 
-    return Math.round(lineTotal * 100) / 100;
+    return (Math.round(lineTotal * 100) / 100);
 }
 
 export function renderLineItems(cartItem, books) {
@@ -25,7 +25,7 @@ export function renderLineItems(cartItem, books) {
     titleTd.textContent = books.title;
     quantityTd.textContent = quantity;
     priceTd.textContent = books.price;
-    lineTotalTd.textContent = `$${calcLineItem(cartItem.quantity, books.price)}`;
+    lineTotalTd.textContent = `$${calcLineItem(cartItem.quantity, books.price).toFixed(2)}`;
 
     tr.append(titleTd, quantityTd, priceTd, lineTotalTd);
 
@@ -39,6 +39,5 @@ export function calcOrderTotal(cartArray, booksArray) {
         const lineTotal = calcLineItem(item.quantity, bookObj.price);
         total = total + lineTotal;
     }
-    return total;
-
+    return total.toFixed(2);
 }

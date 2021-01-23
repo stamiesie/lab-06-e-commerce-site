@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/product.css">
+    <link rel="stylesheet" href="../styles/cart.css">
     <title>Document</title>
 </head>
 
@@ -17,26 +18,20 @@
 
     <main class="inventory">
         <section class="main-section">
-            <h2>Cart</h2>
-            <p><a href="../products/index.html" style="text-decoration: none;">← Back to Products Page</a></p>
+            <h2 class="cart-header">Cart</h2>
+            <p class="products-link"><a href="../products/index.html" style="text-decoration: none;">← Back to Products
+                    Page</a></p>
             <table id="table">
                 <tr>
-                    <td>Title</td>
-                    <td>Quantity</td>
-                    <td>Price</td>
-                    <td>Line Total</td>
+                    <td class="category">Title</td>
+                    <td class="category">Quantity</td>
+                    <td class="category">Price</td>
+                    <td class="category">Line Total</td>
                 </tr>
-                <!-- <tr>
-                    <td>We Begin At The End</td>
-                    <td>3</td>
-                    <td>$19.95</td>
-                    <td>$59.85</td>
-                </tr> -->
-
             </table>
-            <button id="order-total">Place Order</button>
-            <div id="total-message"></div>
         </section>
+        <button id="order-total">Place Order</button>
+        <div id="total-message"></div>
     </main>
 
     <script type="module" src="cart.js"></script>

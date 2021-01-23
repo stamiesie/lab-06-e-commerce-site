@@ -7,6 +7,7 @@ import { calcOrderTotal } from '../cart/utils.js';
 
 const test = QUnit.test;
 
+
 test('should take in a book and return an li', (expect) => {
 
     const firstBook = {
@@ -18,13 +19,12 @@ test('should take in a book and return an li', (expect) => {
         price: 19.95,
     };
 
-    const expected = `<li class="books"><h3 class="title">We Begin At The End</h3><img class="book-image" src="../assets//assets/book1.png"><p class="author">Chris Whitaker</p><p class="category">Fiction</p><p class="price">$19.95</p><button class="buy-button" value="book1">BUY</button></li>`;
+    const expected = `<li class="books"><h3 class="title">We Begin At The End</h3><img class="book-image" src="../assets//assets/book1.png"><p class="author">Chris Whitaker</p><p class="category">Fiction</p><p class="price">$19.95</p><input class="num-input" type="number" min="-10" placeholder="qty"><button class="buy-button" value="book1">BUY</button></li>`;
 
     const actual = renderBook(firstBook);
 
     expect.equal(actual.outerHTML, expected);
 });
-
 
 
 test('should take in book1 and return book title We Begin At The End', (expect) => {
@@ -88,8 +88,6 @@ test('should take in book1 and return book title We Begin At The End', (expect) 
 });
 
 
-
-
 test('will return 9.67 when given 3.11 and 3.11', (expect) => {
 
     const expected = 9.67;
@@ -116,12 +114,13 @@ test('should take in purchaseData for book1 and return an td', (expect) => {
         price: 19.95,
     };
 
-    const expected = "<tr><td>We Begin At The End</td><td>3</td><td>19.95</td><td>$59.85</td></tr>";
+    const expected = `<tr><td>We Begin At The End</td><td>3</td><td>19.95</td><td>$59.85</td></tr>`;
 
     const actual = renderLineItems(cartBook, book);
 
     expect.equal(actual.outerHTML, expected);
 });
+
 
 test('adds together line item totals into order total', (expect) => {
 
